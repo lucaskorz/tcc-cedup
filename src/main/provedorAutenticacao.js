@@ -1,6 +1,7 @@
 import React from 'react'
 
 import AuthService from '../app/service/authService'
+import { mensagemAlert } from '../components/toastr';
 
 export const AuthContext = React.createContext()
 export const AuthConsumer = AuthContext.Consumer;
@@ -21,7 +22,8 @@ class ProvedorAutenticacao extends React.Component {
 
     encerrarSessao = () => {
         AuthService.removerUsuarioAutenticado();
-        this.setState({ isAutenticado: false, usuarioAutenticado: null })
+        this.setState({ isAutenticado: false, isAutenticadoADM: false, usuarioAutenticado: null })
+        mensagemAlert('Você se deslogou do Joga Bem ®. Caso queira reentrar, faça o login novamente.')
     }
 
     render() {

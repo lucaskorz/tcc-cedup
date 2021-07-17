@@ -43,6 +43,10 @@ class CadastroLancamentos extends React.Component {
         }
     }
 
+    convert = () => {
+        parseFloat(this.state.valor)
+    }
+
     submit = () => {
         const usuarioLogado = LocalStorageService.obterItem('_usuario_logado')
 
@@ -60,7 +64,7 @@ class CadastroLancamentos extends React.Component {
             mensagens.forEach(msg => messages.mensagemErro(msg));
             return false;
         }
-
+        this.convert()
         this.service
             .salvar(lancamento)
             .then(response => {
@@ -72,6 +76,7 @@ class CadastroLancamentos extends React.Component {
     }
 
     atualizar = () => {
+        
         const { descricao, valor, mes, ano, tipo, status, usuario, id } = this.state;
         const lancamento = { descricao, valor, mes, ano, tipo, usuario, status, id };
 

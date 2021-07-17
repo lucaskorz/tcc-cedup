@@ -7,7 +7,7 @@ function Navbar(props) {
     return (
         <div className="navbar navbar-expand-lg fixed-top navbar-dark bg-primary">
             <div className="container">
-                <a href="#/home" className="navbar-brand">Joga Bem ®</a>
+                <a href="#/homeJogador" className="navbar-brand">Joga Bem ®</a>
                 <button className="navbar-toggler" type="button" 
                         data-toggle="collapse" data-target="#navbarResponsive" 
                         aria-controls="navbarResponsive" aria-expanded="false" 
@@ -16,9 +16,11 @@ function Navbar(props) {
                 </button>
                 <div className="collapse navbar-collapse" id="navbarResponsive">
                     <ul className="navbar-nav">
-                        <NavbarItem render={props.isUsuarioAutenticado} href="#/home" label="Home" />
-                        <NavbarItem render={props.isUsuarioAutenticado} href="#/cadastro-usuarios" label="Usuários" />
-                        <NavbarItem render={props.isUsuarioAutenticado} href="#/consulta-lancamentos" label="Lançamentos" />
+                        <NavbarItem render={props.isUsuarioAutenticado} href="#/homeJogador" label="Home" />
+                        <NavbarItem render={props.isUsuarioAutenticado} href="#/consulta-agendamento" label="Agendamentos" />
+                        <NavbarItem render={props.isUsuarioAutenticado} href="#/consulta-patota" label="Patotas" />
+                        <NavbarItem render={props.isUsuarioAutenticado} href="#/notas" label="Notas" />
+                        <NavbarItem render={props.isUsuarioAutenticado} href="#/minha-conta" label="Minha Conta" />
                         <NavbarItem render={props.isUsuarioAutenticado} onClick={props.deslogar} href="#/login" label="Sair" />
                     </ul>
                 </div>

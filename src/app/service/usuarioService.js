@@ -30,7 +30,7 @@ class UsuarioService extends ApiService {
 
         if (senha.length < 6) {
             return false;
-            
+
         } else if (!regex.exec(senha)) {
             return false;
         }
@@ -61,6 +61,16 @@ class UsuarioService extends ApiService {
         }
 
         return errors;
+    }
+
+    consultar(usuarioFiltro) {
+        let params = `?nome=${usuarioFiltro.nome}`
+
+        return this.get(params);
+    }
+
+    getNivel(email) {
+        return this.get(`/getNivel/${email}`)
     }
 }
 

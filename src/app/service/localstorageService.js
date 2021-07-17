@@ -9,6 +9,9 @@ export default class LocalStorageService {
     }
     static removerItem(chave) {
         localStorage.removeItem(chave);
+        
     }
+
+
 
 }
